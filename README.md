@@ -47,7 +47,7 @@ Creo en el uso responsable y basado en evidencia de los datos como herramienta p
 
 ## 📫 Contacto
 **Correo:** [tuemail@ejemplo.com](mailto:magdavalles@gmail.com)  
-**LinkedIn:** *Próximamente disponible*  
+**LinkedIn:** [linkedin.com/in/magdalena-valles-8a7a122b6](https://www.linkedin.com/in/magdalena-valles-8a7a122b6)
 
 ---
 
