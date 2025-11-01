@@ -6,16 +6,23 @@
   <title>Magdalena Vallés | Data Analyst Portfolio</title>
 
   <style>
+    :root {
+      --main-color: #5c7061; /* verde grisáceo */
+      --light-bg: #f8f9f7;
+      --text-color: #2c2c2c;
+      --accent: #b7c2b2;
+    }
+
     body {
       font-family: "Inter", Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f7f9fc;
-      color: #1e293b;
+      background-color: var(--light-bg);
+      color: var(--text-color);
     }
 
     header {
-      background-color: #1e3a8a;
+      background-color: var(--main-color);
       color: white;
       text-align: center;
       padding: 60px 20px;
@@ -37,7 +44,7 @@
 
     header p {
       font-size: 1.1em;
-      color: #e0e7ff;
+      color: #e9ede8;
     }
 
     section {
@@ -48,7 +55,7 @@
 
     h2 {
       text-align: center;
-      color: #1e3a8a;
+      color: var(--main-color);
       margin-bottom: 40px;
     }
 
@@ -80,11 +87,12 @@
       width: 50px;
       height: 50px;
       margin-bottom: 10px;
+      object-fit: contain;
     }
 
     .tool-card p {
       font-weight: 500;
-      color: #1e293b;
+      color: var(--text-color);
       font-size: 0.95rem;
     }
 
@@ -114,31 +122,30 @@
     }
 
     .project-card h3 {
-      color: #1e3a8a;
+      color: var(--main-color);
       margin-bottom: 10px;
     }
 
     /* ---------- Contact ---------- */
     .contact {
       text-align: center;
-      background-color: #e0e7ff;
+      background-color: var(--accent);
       padding: 50px 20px;
     }
 
     .contact a {
-      color: #1e3a8a;
+      color: var(--main-color);
       text-decoration: none;
       font-weight: 500;
     }
 
     footer {
-      background-color: #1e3a8a;
+      background-color: var(--main-color);
       color: white;
       text-align: center;
       padding: 15px;
       font-size: 0.9em;
     }
-
   </style>
 </head>
 
@@ -153,7 +160,7 @@
   <section id="about">
     <h2>About Me</h2>
     <p style="text-align:center; max-width:750px; margin:auto;">
-      I’m Magdalena Vallés, a data analyst in training passionate about uncovering insights that can improve healthcare outcomes and disease prevention. 
+      I’m Magdalena Vallés, a data analyst in training passionate about uncovering insights that can improve healthcare outcomes and disease prevention.
       I enjoy combining analytical rigor with visual storytelling to turn complex data into actionable understanding.
     </p>
   </section>
@@ -174,8 +181,38 @@
         <p>Pandas</p>
       </div>
       <div class="tool-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg" alt="Power BI">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
         <p>Power BI</p>
       </div>
       <div class="tool-card">
-        <
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+        <p>GitHub</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <img src="project1.png" alt="Stroke Risk Analysis project">
+      <h3>Stroke Risk Analysis</h3>
+      <p>
+        Exploratory and predictive analysis of medical data to identify key risk factors for stroke (age, glucose level, hypertension, and BMI).
+        Visualized using Python and Seaborn for an intuitive, data-driven story.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>
+      📧 <a href="mailto:magdavalles@gmail.com">magdavalles@gmail.com</a> |
+      💼 <a href="https://www.linkedin.com/in/magdalena-valles-8a7a122b6/">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Magdalena Vallés | Data Analyst Portfolio
+  </footer>
+</body>
+</html>
