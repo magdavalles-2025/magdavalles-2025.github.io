@@ -19,13 +19,16 @@
       padding: 0;
       background-color: var(--light-bg);
       color: var(--text-color);
+      transition: all 0.3s ease;
     }
 
+    /* ---------- Header ---------- */
     header {
       background-color: var(--main-color);
       color: white;
       text-align: center;
       padding: 60px 20px;
+      position: relative;
     }
 
     header img {
@@ -47,6 +50,29 @@
       color: #e9ede8;
     }
 
+    /* ---------- Language Switch ---------- */
+    .lang-switch {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .lang-switch img {
+      width: 28px;
+      height: 20px;
+      cursor: pointer;
+      border-radius: 3px;
+      border: 1px solid #ddd;
+      transition: transform 0.2s ease;
+    }
+
+    .lang-switch img:hover {
+      transform: scale(1.1);
+    }
+
+    /* ---------- Sections ---------- */
     section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -59,7 +85,7 @@
       margin-bottom: 40px;
     }
 
-    /* ---------- Tools Section ---------- */
+    /* ---------- Tools ---------- */
     .tool-grid {
       display: flex;
       flex-wrap: wrap;
@@ -96,7 +122,7 @@
       font-size: 0.95rem;
     }
 
-    /* ---------- Projects Section ---------- */
+    /* ---------- Projects ---------- */
     .project-card {
       display: flex;
       flex-direction: column;
@@ -152,21 +178,25 @@
 <body>
 
   <header>
+    <div class="lang-switch">
+      <img src="https://flagcdn.com/gb.svg" alt="English" id="en-flag">
+      <img src="https://flagcdn.com/es.svg" alt="Español" id="es-flag">
+    </div>
     <img src="foto1.png" alt="Magdalena Vallés photo">
-    <h1>Magdalena Vallés</h1>
-    <p>Data Analyst in training | Focused on health and medical data</p>
+    <h1 id="title">Magdalena Vallés</h1>
+    <p id="subtitle">Data Analyst in training | Focused on health and medical data</p>
   </header>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p style="text-align:center; max-width:750px; margin:auto;">
+    <h2 id="about-title">About Me</h2>
+    <p id="about-text" style="text-align:center; max-width:750px; margin:auto;">
       I’m Magdalena Vallés, a data analyst in training passionate about uncovering insights that can improve healthcare outcomes and disease prevention.
       I enjoy combining analytical rigor with visual storytelling to turn complex data into actionable understanding.
     </p>
   </section>
 
   <section id="tools">
-    <h2>Tools & Technologies</h2>
+    <h2 id="tools-title">Tools & Technologies</h2>
     <div class="tool-grid">
       <div class="tool-card">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
@@ -192,11 +222,11 @@
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2 id="projects-title">Projects</h2>
     <div class="project-card">
       <img src="project1.png" alt="Stroke Risk Analysis project">
-      <h3>Stroke Risk Analysis</h3>
-      <p>
+      <h3 id="project1-title">Stroke Risk Analysis</h3>
+      <p id="project1-text">
         Exploratory and predictive analysis of medical data to identify key risk factors for stroke (age, glucose level, hypertension, and BMI).
         Visualized using Python and Seaborn for an intuitive, data-driven story.
       </p>
@@ -204,7 +234,7 @@
   </section>
 
   <section class="contact">
-    <h2>Contact</h2>
+    <h2 id="contact-title">Contact</h2>
     <p>
       📧 <a href="mailto:magdavalles@gmail.com">magdavalles@gmail.com</a> |
       💼 <a href="https://www.linkedin.com/in/magdalena-valles-8a7a122b6/">LinkedIn</a>
@@ -214,5 +244,44 @@
   <footer>
     © 2025 Magdalena Vallés | Data Analyst Portfolio
   </footer>
+
+  <script>
+    const en = {
+      subtitle: "Data Analyst in training | Focused on health and medical data",
+      aboutTitle: "About Me",
+      aboutText: "I’m Magdalena Vallés, a data analyst in training passionate about uncovering insights that can improve healthcare outcomes and disease prevention. I enjoy combining analytical rigor with visual storytelling to turn complex data into actionable understanding.",
+      toolsTitle: "Tools & Technologies",
+      projectsTitle: "Projects",
+      project1Title: "Stroke Risk Analysis",
+      project1Text: "Exploratory and predictive analysis of medical data to identify key risk factors for stroke (age, glucose level, hypertension, and BMI). Visualized using Python and Seaborn for an intuitive, data-driven story.",
+      contactTitle: "Contact"
+    };
+
+    const es = {
+      subtitle: "Analista de datos en formación | Enfocada en salud y datos médicos",
+      aboutTitle: "Sobre mí",
+      aboutText: "Soy Magdalena Vallés, analista de datos en formación apasionada por descubrir patrones que mejoren la prevención y el diagnóstico de enfermedades. Me gusta combinar el rigor analítico con la narrativa visual para transformar los datos en conocimiento útil.",
+      toolsTitle: "Herramientas y Tecnologías",
+      projectsTitle: "Proyectos",
+      project1Title: "Análisis de Riesgo de Ictus",
+      project1Text: "Análisis exploratorio y predictivo de datos médicos para identificar los principales factores de riesgo de ictus (edad, glucosa, hipertensión e IMC). Visualizado con Python y Seaborn para una interpretación clara y comprensible.",
+      contactTitle: "Contacto"
+    };
+
+    const switchLanguage = (lang) => {
+      const data = lang === 'es' ? es : en;
+      document.getElementById("subtitle").textContent = data.subtitle;
+      document.getElementById("about-title").textContent = data.aboutTitle;
+      document.getElementById("about-text").textContent = data.aboutText;
+      document.getElementById("tools-title").textContent = data.toolsTitle;
+      document.getElementById("projects-title").textContent = data.projectsTitle;
+      document.getElementById("project1-title").textContent = data.project1Title;
+      document.getElementById("project1-text").textContent = data.project1Text;
+      document.getElementById("contact-title").textContent = data.contactTitle;
+    };
+
+    document.getElementById("en-flag").addEventListener("click", () => switchLanguage('en'));
+    document.getElementById("es-flag").addEventListener("click", () => switchLanguage('es'));
+  </script>
 </body>
 </html>
