@@ -174,7 +174,7 @@
     <h2 data-en="Projects" data-es="Proyectos">Projects</h2>
     <div class="projects">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1606206522385-86a5f9a856d5?auto=format&fit=crop&w=800&q=60" alt="Stroke Project" />
+        <img src= project1.png alt="Stroke Project" />
         <div class="card-content">
           <h3 data-en="Stroke Risk Factors Analysis" data-es="Análisis de Factores de Riesgo de Ictus">Stroke Risk Factors Analysis</h3>
           <p data-en="Exploratory data analysis on stroke risk using medical datasets. Includes data cleaning, visualization, and a predictive model."
